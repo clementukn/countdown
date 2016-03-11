@@ -66,9 +66,9 @@ string process(vector<int> cards, string sOpr, int nResult) {
 
 int main(int argc, char *argv[]) {
 	if (argc <= 2) {
-		cout << "usage : program [c1 c2 ...] [result]\n";
-		cout << "ex : program 10 15 5 7 3 578";
-		return 1;
+		cout << "usage : " << argv[0] << " [c1 c2 ...] [result]\n";
+		cout << "ex : " << argv[0] << " 10 15 5 7 3 578";
+		return EXIT_FAILURE;
 	}
 
 	vector<int> cards;
@@ -85,6 +85,7 @@ int main(int argc, char *argv[]) {
 	double nExecutionTime = static_cast<double>(timerEnd - timerStart) / CLOCKS_PER_SEC;
 
 	cout << sResult << endl;
+	cout << "computed in " << nExecutionTime << "s\n";
 	
-	return 0;
+	return EXIT_SUCCESS;
 }
